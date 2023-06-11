@@ -1,17 +1,14 @@
-contador1 = 1
-positivo = 0
-negativo = 0
-numero = 0
+import numpy
 
-while contador1 <= 5:
-    print("Informe um número")
-    numero = int(input())
+vetor = numpy.empty(10, dtype=numpy.int32)
 
-    if numero > 0:
-        positivo +=1
-    if numero < 0:
-        negativo += 1
+for posicao in range(0, 10):
+    print("Digite o valor", posicao + 1, ": ")
+    vetor[posicao] = int(input())
 
-    contador1 += 1
-print("Total de número positivo é ", positivo)
-print("Total de número negativos é ", negativo)
+print("Digite o número a ser pesquisado: ")
+x = int(input())
+
+for posicao in range(0, 10):
+    if vetor[posicao] == x:
+        print(x, "foi encontrado na posição ", posicao)
